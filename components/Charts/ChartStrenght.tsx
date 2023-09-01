@@ -68,15 +68,15 @@ const options: ApexOptions = {
     },
 };
 
-interface ChartTopicState {
+interface ChartStrenghtState {
     series: {
         name: string;
         data: number[];
     }[];
 }
 
-const ChartTopic: React.FC = () => {
-    const [state, setState] = useState<ChartTopicState>({
+const ChartStrenght: React.FC = () => {
+    const [state, setState] = useState<ChartStrenghtState>({
         series: [
             {
                 name: "Topic 1",
@@ -168,7 +168,7 @@ const ChartTopic: React.FC = () => {
                 </div>
             </div>
             <div>
-                <div id="chartTopic" className="-ml-5 -mb-9">
+                <div id="chartStrenght" className="-ml-5 -mb-9">
                     <ApexCharts
                         options={options}
                         series={state.series}
@@ -181,4 +181,4 @@ const ChartTopic: React.FC = () => {
     );
 };
 
-export default ChartTopic;
+export default ChartStrenght;
