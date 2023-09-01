@@ -6,14 +6,14 @@ const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 const options: ApexOptions = {
   colors: ["#B3B420", "#B7DD14"],
   chart: {
-    // events: {
-    //   beforeMount: (chart) => {
-    //     chart.windowResizeHandler();
-    //   },
-    // },
+    events: {
+      beforeMount: (chart) => {
+        chart.windowResizeHandler();
+      },
+    },
     fontFamily: "Satoshi, sans-serif",
     type: "bar",
-    height: 335,
+    height: 300,
     stacked: true,
     toolbar: {
       show: false,
@@ -50,7 +50,7 @@ const options: ApexOptions = {
   },
 
   xaxis: {
-    categories: ["M", "T", "W", "T", "F", "S", "S"],
+    categories: ["1st", "15th", "30th",],
   },
   legend: {
     position: "top",
@@ -80,11 +80,11 @@ const ChartTwo: React.FC = () => {
     series: [
       {
         name: "Response",
-        data: [44, 55, 41, 67, 22, 43, 65],
+        data: [10, 12, 14, 15, 8, 9, 11, 15, 8, 9, 11],
       },
       {
         name: "Scores",
-        data: [13, 23, 20, 8, 13, 27, 15],
+        data: [10, 12, 14, 15, 8, 9, 11, 15, 8, 9, 11],
       },
     ],
   });
@@ -97,12 +97,13 @@ const ChartTwo: React.FC = () => {
   handleReset;
 
   return (
-    <div className="col-span-12 rounded-lg bg-black p-7.5 shadow-default dark:bg-boxdark xl:col-span-4">
+    <div className="col-span-12 rounded-lg bg-black p-7.5 shadow-default xl:col-span-4">
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-white dark:text-white">
             NPS
           </h4>
+          <p className="text-sm">Based on Status</p>
         </div>
         <div>
           <div className="relative z-20 inline-block">
@@ -137,7 +138,20 @@ const ChartTwo: React.FC = () => {
           </div>
         </div>
       </div>
-
+      <div className="grid grid-cols-2 gap-4 justify-between mb-5">
+        <div className="w-6/12 rounded-lg shadow-default">
+          <p className="text-sm mb-3">Responses</p>
+          <div className="flex">
+            <h4 className="text-xl font-bold text-white">5,777</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;13%)</span>
+          </div>
+        </div>
+        <div className="w-6/12 rounded-lg shadow-default">
+          <p className="text-sm mb-3">Scores</p>
+          <div className="flex">
+            <h4 className="text-xl font-bold text-white">24.6%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
+          </div>
+        </div>
+      </div>
       <div>
         <div id="chartTwo" className="-ml-5 -mb-9">
           <ApexCharts
