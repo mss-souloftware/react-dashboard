@@ -27,7 +27,7 @@ const options: ApexOptions = {
     },
   },
   dataLabels: {
-    enabled: false,
+    enabled: true,
   },
   responsive: [
     {

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-    colors: ["#393838", "#B3B420", "#393838"],
+    colors: ["#393838", "#B3B420", "#A1C538"],
     chart: {
         events: {
             beforeMount: (chart) => {
@@ -143,7 +143,7 @@ const ChartStrenght: React.FC = () => {
                 </div>
             </div>
             <div className="mt-4 grid grid-cols-12 gap-4">
-                <div className="col-span-2 flex flex-col justify-between mt-6">
+                {/* <div className="col-span-2 flex flex-col justify-between mt-6">
                     <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
                         Topic 1
                     </button>
@@ -159,8 +159,8 @@ const ChartStrenght: React.FC = () => {
                     <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
                         Topic 5
                     </button>
-                </div>
-                <div className="col-span-10">
+                </div> */}
+                <div className="col-span-12">
                     <div id="chartStrenght" className="-ml-5 -mb-9">
                         <ApexCharts
                             options={options}
