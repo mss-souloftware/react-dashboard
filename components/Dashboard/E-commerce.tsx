@@ -13,6 +13,8 @@ import Link from "next/link";
 // without this the component renders on server and throws an error
 import dynamic from "next/dynamic";
 import ChartFour from "../Charts/ChartFour";
+import ChartStrenght from "../Charts/ChartStrenght";
+import ChartRadar from "../Charts/ChartRadar";
 const MapOne = dynamic(() => import("../Maps/MapOne"), {
   ssr: false,
 });
@@ -21,11 +23,11 @@ const ECommerce: React.FC = () => {
   return (
     <>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 gap-4">
         <div>
           <h2 className="text-3xl font-medium text-white">Net Promoter Score</h2>
         </div>
-        <div className="grid grid-cols-2 gap-4 w-2/3 ml-auto">
+        <div className="grid grid-cols-2 gap-4 xl:w-2/3 w-full ml-auto">
           <div>
             <div className="relative">
               <input
@@ -63,8 +65,8 @@ const ECommerce: React.FC = () => {
       </div>
 
       <div className="mt-4 grid grid-cols-12 gap-4">
-        <ChartThree />
-        <ChartFour />
+        <ChartRadar />
+        <ChartStrenght />
       </div>
 
 

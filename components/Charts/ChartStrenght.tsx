@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-    colors: ["#B3B420", "#B7DD14"],
+    colors: ["#393838", "#B3B420", "#393838"],
     chart: {
         events: {
             beforeMount: (chart) => {
@@ -101,11 +101,11 @@ const ChartStrenght: React.FC = () => {
     handleReset;
 
     return (
-        <div className="col-span-12 rounded-lg bg-black p-7.5 shadow-default xl:col-span-4">
+        <div className="col-span-12 rounded-lg bg-black p-7.5 shadow-default xl:col-span-7">
             <div className="mb-4 justify-between gap-4 sm:flex">
                 <div>
                     <h4 className="text-xl font-semibold text-white dark:text-white">
-                        Feedback
+                        Strengths & Weaknesses
                     </h4>
                     <p className="text-sm">Based on Status</p>
                 </div>
@@ -142,39 +142,33 @@ const ChartStrenght: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 justify-between mb-5 w-full">
-                <div className="rounded-lg shadow-default">
-                    <p className="text-sm mb-3">Sentiment</p>
-                    <div className="flex">
-                        <h4 className="text-xl font-bold text-white">80%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
-                    </div>
+            <div className="mt-4 grid grid-cols-12 gap-4">
+                <div className="col-span-2 flex flex-col justify-between mt-6">
+                    <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
+                        Topic 1
+                    </button>
+                    <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
+                        Topic 2
+                    </button>
+                    <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
+                        Topic 3
+                    </button>
+                    <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
+                        Topic 4
+                    </button>
+                    <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
+                        Topic 5
+                    </button>
                 </div>
-                <div className="rounded-lg shadow-default">
-                    <p className="text-sm mb-3">Top Topics</p>
-                    <div className="grid grid-cols-2 gap-4 w-full">
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 1
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
+                <div className="col-span-10">
+                    <div id="chartStrenght" className="-ml-5 -mb-9">
+                        <ApexCharts
+                            options={options}
+                            series={state.series}
+                            type="bar"
+                            height={350}
+                        />
                     </div>
-                </div>
-            </div>
-            <div>
-                <div id="chartStrenght" className="-ml-5 -mb-9">
-                    <ApexCharts
-                        options={options}
-                        series={state.series}
-                        type="bar"
-                        height={350}
-                    />
                 </div>
             </div>
         </div>
