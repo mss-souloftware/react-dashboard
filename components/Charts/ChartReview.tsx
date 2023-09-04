@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-  colors: ["#B3B420", "#B7DD14"],
+  colors: ["#B7DD14"],
   chart: {
     events: {
       beforeMount: (chart) => {
@@ -50,7 +50,7 @@ const options: ApexOptions = {
   },
 
   xaxis: {
-    categories: ["1st", "15th", "30th",],
+    categories: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th"],
   },
   legend: {
     position: "top",
@@ -80,11 +80,7 @@ const ChartReview: React.FC = () => {
     series: [
       {
         name: "Response",
-        data: [10, 12, 14, 15, 8, 9, 11, 15, 8, 9, 11],
-      },
-      {
-        name: "Scores",
-        data: [10, 12, 14, 15, 8, 9, 11, 15, 8, 9, 11],
+        data: [10, 12, 14, 15, 8, 9, 11],
       },
     ],
   });

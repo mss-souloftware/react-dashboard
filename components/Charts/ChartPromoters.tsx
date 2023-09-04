@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-    colors: ["#B3B420", "#B7DD14"],
+    colors: ["#536602","#B7DD14","#262626"],
     chart: {
         events: {
             beforeMount: (chart) => {
@@ -38,7 +38,7 @@ const options: ApexOptions = {
     ],
     plotOptions: {
         bar: {
-            horizontal: true,
+            horizontal: false,
             borderRadius: 0,
             columnWidth: "25%",
             borderRadiusApplication: "end",
@@ -50,7 +50,7 @@ const options: ApexOptions = {
     },
 
     xaxis: {
-        categories: ["Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5"],
+        categories: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th"],
     },
     legend: {
         position: "top",
@@ -68,31 +68,25 @@ const options: ApexOptions = {
     },
 };
 
-interface ChartTopicState {
+interface ChartPromotersState {
     series: {
         name: string;
         data: number[];
     }[];
 }
 
-const ChartTopic: React.FC = () => {
-    const [state, setState] = useState<ChartTopicState>({
+const ChartPromoters: React.FC = () => {
+    const [state, setState] = useState<ChartPromotersState>({
         series: [
             {
-                name: "Topic 1",
-                data: [10, 12, 14, 15, 30, 20],
-            },
-            {
-                name: "Topic 2",
-                data: [9, 11, 15, 8, 10, 20],
-            },
-            {
-                name: "Topic 3",
-                data: [9, 11, 15, 8, 10, 20],
-            },
-            {
-                name: "Topic 3",
-                data: [9, 11, 15, 8, 10, 20],
+                name: "Detractors",
+                data: [10, 12, 14, 15, 8, 9, 11],
+            }, {
+                name: "Passive",
+                data: [10, 12, 14, 15, 8, 9, 11],
+            }, {
+                name: "Promoters",
+                data: [10, 12, 14, 15, 8, 9, 11],
             },
         ],
     });
@@ -109,7 +103,7 @@ const ChartTopic: React.FC = () => {
             <div className="mb-4 justify-between gap-4 sm:flex">
                 <div>
                     <h4 className="text-xl font-semibold text-white dark:text-white">
-                        Feedback
+                        Promoters
                     </h4>
                     <p className="text-sm">Based on Status</p>
                 </div>
@@ -146,33 +140,28 @@ const ChartTopic: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 justify-between mb-5 w-full">
-                <div className="rounded-lg shadow-default">
-                    <p className="text-sm mb-3">Sentiment</p>
+            <div className="grid grid-cols-12 gap-4 justify-between mb-5">
+                <div className="col-span-4 rounded-lg shadow-default">
+                    <p className="text-sm mb-3">Detractors</p>
                     <div className="flex">
-                        <h4 className="text-xl font-bold text-white">80%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
+                        <h4 className="text-xl font-bold text-white">594</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;13%)</span>
                     </div>
                 </div>
-                <div className="rounded-lg shadow-default">
-                    <p className="text-sm mb-3">Top Topics</p>
-                    <div className="grid grid-cols-2 gap-4 w-full">
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 1
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
-                        <button className="bg-bodydark text-[10px] text-white px-3 py-0.5 rounded-xl">
-                            Topic 2
-                        </button>
+                <div className="col-span-4 rounded-lg shadow-default">
+                    <p className="text-sm mb-3">Passive</p>
+                    <div className="flex">
+                        <h4 className="text-xl font-bold text-white">24.6%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
+                    </div>
+                </div>
+                <div className="col-span-4 rounded-lg shadow-default">
+                    <p className="text-sm mb-3">Promoters</p>
+                    <div className="flex">
+                        <h4 className="text-xl font-bold text-white">55.6%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
                     </div>
                 </div>
             </div>
             <div>
-                <div id="chartTopic" className="-ml-5 -mb-9">
+                <div id="chartPromoters" className="-ml-5 -mb-9">
                     <ApexCharts
                         options={options}
                         series={state.series}
@@ -185,4 +174,4 @@ const ChartTopic: React.FC = () => {
     );
 };
 
-export default ChartTopic;
+export default ChartPromoters;

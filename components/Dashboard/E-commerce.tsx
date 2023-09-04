@@ -1,20 +1,15 @@
 "use client";
 import React from "react";
 import ChartThree from "../Charts/ChartThree";
-import ChartTwo from "../Charts/ChartTwo";import ChartTopic from "../Charts/ChartTopic";
+import ChartTwo from "../Charts/ChartTwo"; import ChartTopic from "../Charts/ChartTopic";
 import Link from "next/link";
-// import Map from "../Maps/TestMap";
 
-// without this the component renders on server and throws an error
-import dynamic from "next/dynamic";
 import ChartFour from "../Charts/ChartFour";
 import ChartStrenght from "../Charts/ChartStrenght";
 import ChartRadar from "../Charts/ChartRadar";
 import ChartReview from "../Charts/ChartReview";
 import TableTwo from "../Tables/TableTwo";
-const MapOne = dynamic(() => import("../Maps/MapOne"), {
-  ssr: false,
-});
+import ChartPromoters from "../Charts/ChartPromoters";
 
 const ECommerce: React.FC = () => {
   return (
@@ -58,6 +53,10 @@ const ECommerce: React.FC = () => {
       <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <ChartTwo />
         <ChartReview />
+        <ChartPromoters />
+      </div>
+
+      <div className="mt-4 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <ChartTopic />
       </div>
 
