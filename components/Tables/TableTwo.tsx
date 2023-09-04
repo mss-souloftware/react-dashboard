@@ -1,106 +1,149 @@
 import Image from "next/image";
 import { Product } from "@/types/product";
 
-const productData: Product[] = [
-  {
-    image: "/images/product/product-01.png",
-    name: "Apple Watch Series 7",
-    category: "Electronics",
-    price: 296,
-    sold: 22,
-    profit: 45,
-  },
-  {
-    image: "/images/product/product-02.png",
-    name: "Macbook Pro M1",
-    category: "Electronics",
-    price: 546,
-    sold: 12,
-    profit: 125,
-  },
-  {
-    image: "/images/product/product-03.png",
-    name: "Dell Inspiron 15",
-    category: "Electronics",
-    price: 443,
-    sold: 64,
-    profit: 247,
-  },
-  {
-    image: "/images/product/product-04.png",
-    name: "HP Probook 450",
-    category: "Electronics",
-    price: 499,
-    sold: 72,
-    profit: 103,
-  },
-];
-
 const TableTwo = () => {
   return (
-    <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-      <div className="py-6 px-4 md:px-6 xl:px-7.5">
-        <h4 className="text-xl font-semibold text-black dark:text-white">
-          Top Products
-        </h4>
-      </div>
+    <div className="border border-stroke bg-black shadow-default rounded-lg">
 
-      <div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+      <div className="grid grid-cols-12 border-b text-white py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5">
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">
+            <input className="bg-transparent" type="checkbox" />
+          </p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Name</p>
+        </div>
+        <div className="col-span-2 hidden items-center">
+          <p className="font-medium">Mobile #</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Email</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Rating</p>
+        </div>
         <div className="col-span-3 flex items-center">
-          <p className="font-medium">Product Name</p>
-        </div>
-        <div className="col-span-2 hidden items-center sm:flex">
-          <p className="font-medium">Category</p>
+          <p className="font-medium">Product</p>
         </div>
         <div className="col-span-1 flex items-center">
-          <p className="font-medium">Price</p>
-        </div>
-        <div className="col-span-1 flex items-center">
-          <p className="font-medium">Sold</p>
-        </div>
-        <div className="col-span-1 flex items-center">
-          <p className="font-medium">Profit</p>
+          <p className="font-medium">Feedback</p>
         </div>
       </div>
 
-      {productData.map((product, key) => (
-        <div
-          className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
-          key={key}
-        >
-          <div className="col-span-3 flex items-center">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="h-12.5 w-15 rounded-md">
-                <Image
-                  src={product.image}
-                  width={60}
-                  height={50}
-                  alt="Product"
-                />
-              </div>
-              <p className="text-sm text-black dark:text-white">
-                {product.name}
-              </p>
-            </div>
-          </div>
-          <div className="col-span-2 hidden items-center sm:flex">
-            <p className="text-sm text-black dark:text-white">
-              {product.category}
-            </p>
-          </div>
-          <div className="col-span-1 flex items-center">
-            <p className="text-sm text-black dark:text-white">
-              ${product.price}
-            </p>
-          </div>
-          <div className="col-span-1 flex items-center">
-            <p className="text-sm text-black dark:text-white">{product.sold}</p>
-          </div>
-          <div className="col-span-1 flex items-center">
-            <p className="text-sm text-meta-3">${product.profit}</p>
-          </div>
+
+      <div
+        className="grid grid-cols-12 border-t text-white border-stroke py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5"
+      >
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">
+            <input type="checkbox" />
+          </p>
         </div>
-      ))}
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Joseph Martinez</p>
+        </div>
+        <div className="col-span-2 hidden items-center">
+          <p className="font-medium">+1 (555) 789-0123</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">xtaylor@aol.com</p>
+        </div>
+        <div className="col-span-2 flex items-center text-center">
+          <p className="font-medium text-warning">8</p>
+        </div>
+        <div className="col-span-3 flex items-center">
+          <p className="font-medium">Resturant Location</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">abcxyz@gmail.com</p>
+        </div>
+      </div>
+
+      <div
+        className="grid grid-cols-12 border-t text-white border-stroke py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5"
+      >
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">
+            <input type="checkbox" />
+          </p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Sarah Williams</p>
+        </div>
+        <div className="col-span-2 hidden items-center">
+          <p className="font-medium">+1 (555) 789-0123</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">manderson@icloud.com</p>
+        </div>
+        <div className="col-span-2 flex items-center text-center">
+          <p className="font-medium text-success">9</p>
+        </div>
+        <div className="col-span-3 flex items-center">
+          <p className="font-medium">Classic Eggs</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">abcxyz@gmail.com</p>
+        </div>
+      </div>
+
+      <div
+        className="grid grid-cols-12 border-t text-white border-stroke py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5"
+      >
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">
+            <input type="checkbox" />
+          </p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Richard Thompson</p>
+        </div>
+        <div className="col-span-2 hidden items-center">
+          <p className="font-medium">+1 (555) 789-0123</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">hcampbell@icloud.com</p>
+        </div>
+        <div className="col-span-2 flex items-center text-center">
+          <p className="font-medium text-danger">4</p>
+        </div>
+        <div className="col-span-3 flex items-center">
+          <p className="font-medium">Orange Juice</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">abcxyz@gmail.com</p>
+        </div>
+      </div>
+
+      <div
+        className="grid grid-cols-12 border-t text-white border-stroke py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5"
+      >
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">
+            <input type="checkbox" />
+          </p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">Joseph Martinez</p>
+        </div>
+        <div className="col-span-2 hidden items-center">
+          <p className="font-medium">+1 (555) 789-0123</p>
+        </div>
+        <div className="col-span-2 flex items-center">
+          <p className="font-medium">xtaylor@aol.com</p>
+        </div>
+        <div className="col-span-2 flex items-center text-center">
+          <p className="font-medium text-success">9</p>
+        </div>
+        <div className="col-span-3 flex items-center">
+          <p className="font-medium">Resturant Location</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">abcxyz@gmail.com</p>
+        </div>
+      </div>
+
     </div>
   );
 };

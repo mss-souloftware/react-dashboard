@@ -80,15 +80,19 @@ const ChartTopic: React.FC = () => {
         series: [
             {
                 name: "Topic 1",
-                data: [10, 12, 14, 15, 8],
+                data: [10, 12, 14, 15, 30, 20],
             },
             {
                 name: "Topic 2",
-                data: [9, 11, 15, 8, 9, 11],
+                data: [9, 11, 15, 8, 10, 20],
             },
             {
                 name: "Topic 3",
-                data: [9, 11, 15, 8, 9, 11],
+                data: [9, 11, 15, 8, 10, 20],
+            },
+            {
+                name: "Topic 3",
+                data: [9, 11, 15, 8, 10, 20],
             },
         ],
     });
@@ -146,7 +150,7 @@ const ChartTopic: React.FC = () => {
                 <div className="rounded-lg shadow-default">
                     <p className="text-sm mb-3">Sentiment</p>
                     <div className="flex">
-                        <h4 className="text-xl font-bold text-white">80%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
+                        <h4 className="text-xl font-bold text-white">100%</h4> <span className="text-success text-xs ml-2 mt-2">(&uarr;8%)</span>
                     </div>
                 </div>
                 <div className="rounded-lg shadow-default">

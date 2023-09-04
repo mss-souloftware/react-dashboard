@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
-import ChartOne from "../Charts/ChartOne";
 import ChartThree from "../Charts/ChartThree";
-import ChartTwo from "../Charts/ChartTwo";
-import ChatCard from "../Chat/ChatCard";
-import TableOne from "../Tables/TableOne";
-import CardDataStats from "../CardDataStats";
-import ChartTopic from "../Charts/ChartTopic";
+import ChartTwo from "../Charts/ChartTwo";import ChartTopic from "../Charts/ChartTopic";
 import Link from "next/link";
 // import Map from "../Maps/TestMap";
 
@@ -16,6 +11,7 @@ import ChartFour from "../Charts/ChartFour";
 import ChartStrenght from "../Charts/ChartStrenght";
 import ChartRadar from "../Charts/ChartRadar";
 import ChartReview from "../Charts/ChartReview";
+import TableTwo from "../Tables/TableTwo";
 const MapOne = dynamic(() => import("../Maps/MapOne"), {
   ssr: false,
 });
@@ -70,6 +66,26 @@ const ECommerce: React.FC = () => {
         <ChartStrenght />
       </div>
 
+
+      <div className="mt-4 grid grid-cols-2 gap-4">
+        <div>
+          <h2 className="text-3xl font-medium text-white">NPS Feedbacks</h2>
+        </div>
+        <div className=" ml-auto">
+          <div>
+            <div className="relative">
+              <Link
+                href="#"
+                className="inline-flex items-center justify-center rounded-lg gap-2.5 bg-transparent py-3 px-5  text-center font-medium text-primary hover:text-white "
+              >View all &rarr;</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <TableTwo />
+      </div>
 
       <div className="mt-4 grid grid-cols-2 gap-4">
         <div>
