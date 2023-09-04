@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-    colors: ["#393838", "#B3B420", "#A1C538"],
+    colors: ["#B7DD14", "#536602"],
     chart: {
         events: {
             beforeMount: (chart) => {
@@ -48,21 +48,13 @@ const options: ApexOptions = {
     dataLabels: {
         enabled: false,
     },
-
-    xaxis: {
-        categories: ["Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5"],
-    },
     legend: {
-        position: "top",
-        horizontalAlign: "left",
-        fontFamily: "Satoshi",
-        fontWeight: 500,
-        fontSize: "14px",
-
-        markers: {
-            radius: 99,
-        },
+        show: false,
     },
+    xaxis: {
+        categories: ["Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5", "Topic 6", "Topic 7"],
+    },
+
     fill: {
         opacity: 1,
     },
@@ -80,15 +72,11 @@ const ChartStrenght: React.FC = () => {
         series: [
             {
                 name: "Topic 1",
-                data: [10, 12, 14, 15, 8],
+                data: [10, -12, 14, -17, -15, 16, 19],
             },
             {
                 name: "Topic 2",
-                data: [9, 11, 15, 8, 9, 11],
-            },
-            {
-                name: "Topic 3",
-                data: [9, 11, 15, 8, 9, 11],
+                data: [-10, 12, -14, 17, 15, -16, -19],
             },
         ],
     });
