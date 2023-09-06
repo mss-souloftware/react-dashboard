@@ -43,6 +43,20 @@ const options: ApexOptions = {
             columnWidth: "25%",
             borderRadiusApplication: "end",
             borderRadiusWhenStacked: "last",
+            colors: {
+                ranges: [
+                    {
+                        from: -Infinity,
+                        to: 0,
+                        color: "#536602",
+                    },
+                    {
+                        from: 0,
+                        to: Infinity,
+                        color: "#B7DD14",
+                    },
+                ],
+            },
         },
     },
     dataLabels: {
