@@ -86,11 +86,7 @@ const ChartStrenght: React.FC = () => {
         series: [
             {
                 name: "Topic 1",
-                data: [10, -12, 14, -17, -15, 16, 19],
-            },
-            {
-                name: "Topic 2",
-                data: [-10, 12, -14, 17, 15, -16, -19],
+                data: [10,17,-18,15,-14,11,-8], // Specify positive and negative values
             },
         ],
     });
