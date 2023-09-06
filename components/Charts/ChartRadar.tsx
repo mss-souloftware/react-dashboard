@@ -36,7 +36,15 @@ const options: ApexOptions = {
             breakpoint: 640,
             options: {
                 chart: {
-                    width: 250,
+                    width: 300,
+                },
+            },
+        },
+        {
+            breakpoint: 280,
+            options: {
+                chart: {
+                    width: 300,
                 },
             },
         },
