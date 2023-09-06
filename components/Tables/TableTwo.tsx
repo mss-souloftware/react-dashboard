@@ -1,8 +1,9 @@
+import styles from './TableTwo.module.css';
+
 const TableTwo = () => {
   return (
-    <div className="overflow-x-auto">
-      <div className="border border-stroke bg-black shadow-default rounded-lg min-w-max">
-
+    <div className={`${styles.overflowAuto}`}>
+      <div className={`border border-stroke bg-black shadow-default rounded-lg xsmmin-w-max ${styles.minwidthfit}`} >
         <div className="grid grid-cols-12 border-b text-white py-4.5 px-4 sm:grid-cols-12 md:px-6 2xl:px-7.5">
           <div className="col-span-1 flex items-center">
             <p className="font-medium">

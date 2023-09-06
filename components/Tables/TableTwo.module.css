@@ -1,0 +1,9 @@
+@media(max-width:1024px) {
+    .overflowAuto {
+        overflow-x: auto;
+    }
+
+    .minwidthfit {
+        min-width: max-content;
+    }
+}
